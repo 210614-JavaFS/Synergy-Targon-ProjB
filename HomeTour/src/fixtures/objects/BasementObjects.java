@@ -8,6 +8,5 @@ public class BasementObjects extends Fixture implements Interactive {
 	}
 	
 	public void interactWith () {
-	}
-	
+	}	
 }
