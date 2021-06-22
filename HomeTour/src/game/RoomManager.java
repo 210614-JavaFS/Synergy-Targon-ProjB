@@ -21,6 +21,7 @@ public class RoomManager {
 	
 	public static void init() {			
 		//creating the house, put your rooms instantiation here
+		// need a basement class for this to work
 		Basement basement = new Basement();	
 		
 		
