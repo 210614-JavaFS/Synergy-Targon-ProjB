@@ -11,13 +11,13 @@ public abstract class Fixture {
 		public String GetShortDescription() {return shortDescription;}
 		public String GetLongDescription() {return longDescription;}
 
-		public void SetName(String name) {Fixture.name = name;}
+		public void SetName(String name) {this.name = name;}
 		public void SetShortDescription(String shortDesc) {shortDescription = shortDesc;}
 		public void SetLongDescription(String longDesc) {longDescription = longDesc;}
 		
-		public Fixture(String name, String shortDesc, String LongDesc)	{
+		public Fixture(String name, String shortDesc, String longDesc)	{
 			SetName(name);
 			SetShortDescription(shortDesc);
-			SetlongDescription(longDesc);
+			SetLongDescription(longDesc);
 		}
 }

@@ -1,42 +1,59 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.*;
+import fixtures.rooms.Room;
+import fixtures.rooms.Basement;
 
 public class Main{
+	public static final int houseSize = 1;
 	
 	public static void main(String[] args) {
-		ArrayList<Player> movingObjects = new ArrayList<Player>();
 		//Index 0 indicates player
-		//Index >0 indicates ghost
+		//Index >0 indicates cats
+		ArrayList<Player> movingObjects = new ArrayList<Player>();		
 
-		boolean playerAlive = true;
-		String[] command;
+		
+		//creating the house, create your rooms here
+		Basement hongsRoom = new Basement();
+		
+
+		//starting room, should be foyer
+		Room initRoom = hongsRoom;
+
+		
+		boolean playerInHouse = true;
+		
+		String[] command = null;
 
 		System.out.println("Please Enter Your Name: ");
 		collectInput();
-		parse(command, player); //why take a player?
 		
-		movingObjects.add(new Player(playerName, initRoom));
+		movingObjects.add(new Player(command[0], initRoom));
 
-		movingObjects[0].start(); 	//bring the player back to life 
+		movingObjects.get(0).start(); 	//bring the player back to life 
 
-		while (playerAlive) { //player not dead
-			// life cycle of player and ghosts
+		parse(command, movingObjects.get(0)); //why take a player?
 
-			printRoom(movingObjects[0])
+		while (playerInHouse) { //player not leaving yet
+			// life cycle of player and cats
+
+			printRoom(movingObjects.get(0));
 			collectInput();
 
 			for (Player movingObjectsIterator: movingObjects) {
-			// player and ghost doing chores
+			// player and cats doing chores
 				
 			}
 		}
 		
-		// kill all ghosts and player
+		// kill all threads
 		for (Player movingObjectsIterator: movingObjects)
-			movingObjectsIterator.join();
+			try {
+				movingObjectsIterator.join();				
+			}
+			catch (InterruptedException intEcept) {
+				break;
+			}
  	}
 	
 	private static void printRoom(Player player) {
@@ -45,6 +62,8 @@ public class Main{
 	
 	private static String collectInput() {
 		//need faulty input safe guard
+		String inputBuffer = "";
+		return inputBuffer;
 	}
 	
 	private static void parse(String[] command, Player player) {
