@@ -34,4 +34,5 @@ public class Player extends Thread {
 	public void run(boolean isAGhost) { // Ghost action
 		
 	}
+
 }
