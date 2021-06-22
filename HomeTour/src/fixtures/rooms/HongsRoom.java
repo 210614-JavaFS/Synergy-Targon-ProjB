@@ -2,6 +2,9 @@ package fixtures.rooms;
 
 public class HongsRoom extends Room {
 
+	
+	// class should probably be renamed to something like "basement" for easier reading
+	
 	public HongsRoom() {
 		super("Basement",
 				"A chilly dark cavernous basement",
