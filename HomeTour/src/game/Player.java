@@ -21,7 +21,7 @@ public class Player extends Thread {
 
 	}
 
-	public void start(boolean isAGhost) { // Create a ghost
+	public void start(boolean isACat) { // Create a cat johnny, whiskers, kitkat, persian.
 
 	}
 
@@ -31,7 +31,8 @@ public class Player extends Thread {
 		
 	}
 
-	public void run(boolean isAGhost) { // Ghost action
+	public void run(boolean isACat) { // Cat action
 		
 	}
+
 }
