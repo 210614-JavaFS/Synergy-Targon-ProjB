@@ -2,23 +2,19 @@ package game;
 
 import java.util.ArrayList;
 import fixtures.rooms.Room;
-import fixtures.rooms.HongsRoom;
+import fixtures.rooms.Basement;
 
 public class Main{
 	public static final int houseSize = 1;
 	
 	public static void main(String[] args) {
-		
-		// i have no idea whats going on here tbh someone please explain
-		
-		
 		//Index 0 indicates player
-		//Index >0 indicates kids
-		ArrayList<Player> movingObjects = new ArrayList<Player>();
+		//Index >0 indicates cats
+		ArrayList<Player> movingObjects = new ArrayList<Player>();		
 
 		
 		//creating the house, create your rooms here
-		HongsRoom hongsRoom = new HongsRoom();
+		Basement hongsRoom = new Basement();
 		
 
 		//starting room, should be foyer
@@ -39,18 +35,18 @@ public class Main{
 		parse(command, movingObjects.get(0)); //why take a player?
 
 		while (playerInHouse) { //player not leaving yet
-			// life cycle of player and ghosts
+			// life cycle of player and cats
 
 			printRoom(movingObjects.get(0));
 			collectInput();
 
 			for (Player movingObjectsIterator: movingObjects) {
-			// player and ghost doing chores
+			// player and cats doing chores
 				
 			}
 		}
 		
-		// kill all ghosts and player
+		// kill all threads
 		for (Player movingObjectsIterator: movingObjects)
 			try {
 				movingObjectsIterator.join();				
@@ -73,4 +69,5 @@ public class Main{
 	private static void parse(String[] command, Player player) {
 		
 	}
+ }
 }
