@@ -89,5 +89,4 @@ public class Main{
 	private static void parse(String[] command, Player player) {
 		
 	}
- }
 }
