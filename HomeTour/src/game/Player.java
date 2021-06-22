@@ -6,22 +6,22 @@ import fixtures.rooms.Room;
 
 public class Player extends Thread {
 	private String name;
-	private static int ghostNumber = 0;
+	private static int catNumber = 0;
 	Room currentRoom;
 	
 	public Player(String name, Room placingRoom) {
 		this.name = name;
 		this.currentRoom = placingRoom;
-		Player.ghostNumber ++;
+		Player.catNumber ++;
 	}
 	
 
 	
 	public void start() { // Create a player
-
+		
 	}
 
-	public void start(boolean isAGhost) { // Create a ghost
+	public void start(boolean isACat) { // Create a cat johnny, whiskers, kitkat, persian.
 
 	}
 
@@ -31,7 +31,7 @@ public class Player extends Thread {
 		
 	}
 
-	public void run(boolean isAGhost) { // Ghost action
+	public void run(boolean isACat) { // Cat action
 		
 	}
 

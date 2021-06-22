@@ -25,11 +25,11 @@ public class Room extends Fixture {
 		public Room getExits(String direction) { //Return a single exit by direction
 			switch (direction) {
 				case "north":
-					break;
+					return exits[8];
 				case "south":
-					break;
+					return exits[2];
 				default:
-					//Return warning: No such direction
+					return null;
 			}
 		}
 }
