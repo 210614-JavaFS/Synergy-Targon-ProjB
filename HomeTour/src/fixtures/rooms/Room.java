@@ -4,12 +4,17 @@ import fixtures.Fixture;
 
 public class Room extends Fixture {
 		public Room[] exits;
+		
+		
+		// this constructor is called by all the custom rooms to set their names, short description, and long description
+		// this constructor uses super to call the constructor in Fixture to set the names, short description, and long description
 		public Room(String name, String shortDesc, String longDesc)	{
 			super(name, shortDesc, longDesc);
 			this.exits = new Room[9];
 		}
 		
-		public void setExits() { //add the vailable exits
+		
+		public void setExits() { //add the available exits
 			
 		}
 		
