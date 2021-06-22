@@ -8,9 +8,13 @@ public class Main{
 	public static final int houseSize = 1;
 	
 	public static void main(String[] args) {
+		
+		// i have no idea whats going on here tbh someone please explain
+		
+		
 		//Index 0 indicates player
 		//Index >0 indicates kids
-		ArrayList<Player> movingObjects = new ArrayList<Player>();		
+		ArrayList<Player> movingObjects = new ArrayList<Player>();
 
 		
 		//creating the house, create your rooms here
