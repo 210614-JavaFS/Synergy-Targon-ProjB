@@ -13,7 +13,7 @@ public class Microwave extends Fixture implements Interactive{
 	
 	public void interactWith() {
 		System.out.println("You put your ramen in the microwave and try to cook it for 2 minutes");
-		this.SetLongDescription("The rusted microwave looks as though it hasn't been used in over half a decade. It" + "is still turned off but has your ramen in it... cold.");
+		this.SetLongDescription("The rusted microwave looks as though it hasn't been used in over half a century. It" + "is still turned off but has your ramen in it... cold.");
 	}
 
 }
