@@ -17,7 +17,7 @@ public class LoungeRoom extends Room {
 		   +"\n"
 			+ "You let out a sigh as you crouch down next to the translucent window being showered with snowdrops.");
 	}
-	//this.exits[?] = RoomManager.getRoom(“kitchen or basement depending on exit number”);
+	//this.exits[?] = RoomManager.getRoom(“kitchen or basement depending on exit number”)??;
 	
 	public Interactive getLoungeFeature() {
 		return loungeFeature;
