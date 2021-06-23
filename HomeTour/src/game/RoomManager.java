@@ -26,7 +26,7 @@ public class RoomManager {
 		
 		
 		//put rooms into house, assign your rooms to an index in here
-		rooms[0] = basement;
+		rooms[1] = basement;
 
 		
 		//starting room, should be be change to foyer once done constructing
