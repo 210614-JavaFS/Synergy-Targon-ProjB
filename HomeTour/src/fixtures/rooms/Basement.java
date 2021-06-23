@@ -4,9 +4,10 @@ public class Basement extends Room {
 
 	public Basement() {
 		super("Basement",
-				"A chilly dark cavernous basement",
-				"As you walk down the fusty creaked steps of a narrow lengthy steepy stairs. "
-				+ "You come into a pitch-dark basement. Bashing your face is a strong smell of machine oils. "
-				+ "You are suffocating from the fear of being defenseless in this darkness.");
+				"Your cats' basement",
+				"Above earth is your cats' home and under earth is your cats habitat. \n"
+				+ "You walk down the carpeted steps of the stairs and entering the basement. \n"
+				+ "You come into a nicely decorated basement.  Climbing path, scratching posts and small hideouts hanging on the wall. \n"
+				+ "Bashing your face is the smell of cat litter. " + "You are suffocating from your own laziness.\n");
 	}
 }
