@@ -29,7 +29,7 @@ public abstract class Fixture {
 		
 		// getter method for long description
 		public String GetLongDescription() {
-			return getLongDescription();
+			return longDescription;
 		}
 
 		// setter method for name
@@ -44,14 +44,7 @@ public abstract class Fixture {
 		
 		// setter method for long description
 		public void SetLongDescription(String longDesc) {
-			setLongDescription(longDesc);
-		}
-		
-		public String getLongDescription() {
-			return longDescription;
-		}
-
-		public void setLongDescription(String longDescription) {
-			this.longDescription = longDescription;
+			longDescription = longDesc;
 		}
 }
+		
