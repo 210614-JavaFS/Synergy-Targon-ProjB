@@ -1,8 +1,11 @@
 package fixtures.rooms;
 
+import fixtures.objects.Candle;
+
 public class Foyer extends Room {
 
-
+	Candle candle = new Candle();
+	
 	// need to add interactive object and exit directions
 	
 	// fletcher's room
