@@ -46,6 +46,4 @@ public abstract class Fixture {
 		public void SetLongDescription(String longDesc) {
 			longDescription = longDesc;
 		}
-		
-		
 }

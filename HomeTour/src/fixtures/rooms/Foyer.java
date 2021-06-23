@@ -2,15 +2,16 @@ package fixtures.rooms;
 
 public class Foyer extends Room {
 
-	
+
 	// need to add interactive object and exit directions
 	
 	// fletcher's room
 	public Foyer() {
 		super("Foyer",
-				"A large decaying lobby",
+				"A small foyer ",
 				"As you open the rotting door and step inside you enter a small decaying lobby"
-				+ "The smell of loose dirt and rock from the cracked stone floors fills your nose"
-				+ "After lighting a lamp, you see various rooms");
-	}
+				+ "To your left you see a concrete floor leading to a garage"
+				+ "To your right you see a spacious tile file leading to a bathroom"
+				+ "Straight ahead you can see a small candle");
+	}	
 }
