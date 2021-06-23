@@ -13,7 +13,7 @@ public class Lawnmower extends Fixture implements Interactive{
 	
 	public void interactWith() {
 		System.out.println("Pulling the cord will power the lawnmower on.");
-		this.SetLongDescription("The lawnmower is on, the blade spins from beneath, the overgrown grass outside is ready to be cut.");
+		this.setLongDescription("The lawnmower is on, the blade spins from beneath, the overgrown grass outside is ready to be cut.");
 	}
 
 }
