@@ -38,7 +38,6 @@ public class RoomManager {
 		rooms[2] = basement;
 		rooms[3] = kitchen;
 		rooms[4] = attic;
-		rooms[0] = basement;
 
 
 		//starting room, should be be change to foyer once done constructing

@@ -8,7 +8,7 @@ import game.RoomManager;
 
 public class Main{
 	public static final int houseSize = 1;
-	public static final int numberOfRooms = 1;
+	public static final int numberOfRooms = 9;
 	public static final int maxCommands = 5;
 	
 	private static HashSet<String> lightMoveAction = new HashSet<String>();

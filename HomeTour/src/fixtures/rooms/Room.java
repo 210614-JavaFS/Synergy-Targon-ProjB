@@ -12,12 +12,26 @@ public class Room extends Fixture {
 		
 		public Room(String name, String shortDesc, String longDesc)	{
 			super(name, shortDesc, longDesc);
-			this.exits = new Room[9];
+			this.exits = new Room[4];
 		}
 		
 		
-		public void setExits() { //add the available exits
-			
+		public void setExits(int choice) { //add the available exits
+			String direction = "";
+			switch (choice) {
+				case 8:
+					direction = "north";
+					break;
+				case 2:
+					direction = "south";
+					break;
+				case 6:
+					direction = "east";
+					break;
+				case 4:
+					direction = "west";
+					break;
+			}
 		}
 		
 		public Room[] getExits() { //Return all exits, need to check empty *.isNull() in roomModifier
@@ -30,6 +44,10 @@ public class Room extends Fixture {
 					return exits[8];
 				case "south":
 					return exits[2];
+				case "east":
+					return exits[6];
+				case "west":
+					return exits[4];
 				default:
 					return null;
 			}
