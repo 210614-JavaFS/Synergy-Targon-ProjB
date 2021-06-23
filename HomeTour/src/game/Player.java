@@ -1,6 +1,6 @@
 package game;
 
-import java.util.ArrayList;
+import java.util.concurrent.Semaphore;
 
 import fixtures.rooms.Room;
 
@@ -10,7 +10,6 @@ public class Player extends Thread {
 	private boolean isACat;
 	private Thread threadID;
 	Room currentRoom;
-	
 	
 	public Player(String name, Room placingRoom) {
 		this.name = name;
@@ -41,6 +40,6 @@ public class Player extends Thread {
 	}
 
 	public void run(boolean isACat) { // Cat action
-		System.out.println("Your cat " + this.name + "is walking ");
+		System.out.println("I'm cat " + this.name);
 	}
 }
