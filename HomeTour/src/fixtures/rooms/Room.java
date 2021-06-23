@@ -15,8 +15,10 @@ public class Room extends Fixture {
 			this.exits = new Room[9];
 		}
 		
+		//we need a second parameter which is a room object
 		
-		public void setExits(int choice) { //add the available exits
+		
+		public void setExits(int choice, Room exits) { //add the available exits
 			String direction = "";
 			switch (choice) {
 				case 8:

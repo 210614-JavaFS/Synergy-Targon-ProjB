@@ -18,7 +18,7 @@ public class Foyer extends Room {
 				+ "Straight ahead you can see a small candle"
 				+ "Behind you is the door to the house");
 		
-			this.setExits(6);
-			this.setExits(4);
+			this.setExits(6, this);
+			this.setExits(4, this);
 	}	
 }
