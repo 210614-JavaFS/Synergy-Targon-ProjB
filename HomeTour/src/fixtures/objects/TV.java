@@ -12,6 +12,10 @@ public class TV extends Fixture implements Interactive {
 	
 	
 	public void interactWith() {
-		
+		System.out.println("You hit the TV with a heavy tap turnning it off.");
+		this.SetLongDescription("The TV is warm to the touch. May need some repairs as it"
+				+ "seems to be on its last legs.");
 	}
 }
+
+
