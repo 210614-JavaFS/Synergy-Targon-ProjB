@@ -30,10 +30,6 @@ public class Room extends Fixture {
 					return exits[8];
 				case "south":
 					return exits[2];
-				case "east":
-					return exits[3];
-				case "west":
-					return exits[4];
 				default:
 					return null;
 			}
