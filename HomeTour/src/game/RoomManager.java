@@ -1,7 +1,6 @@
 package game;
 
-import fixtures.rooms.Basement;
-import fixtures.rooms.Room;
+import fixtures.rooms.*;
 
 /***********************
  This class populates the house
@@ -22,8 +21,7 @@ public class RoomManager {
 	public static Room getInitialRoom() {
 		return initialRoom;
 	}
-
-	public static void init() {			
+	
 	public static void init(int numberOfRooms) {
 		//create slot for rooms
 		RoomManager.rooms = new Room[numberOfRooms];
