@@ -7,7 +7,6 @@ import fixtures.rooms.Room;
 import game.RoomManager;
 
 public class Main{
-	public static final int houseSize = 1;
 	public static final int numberOfRooms = 7;
 	public static final int maxCommands = 5;
 	
@@ -76,7 +75,7 @@ public class Main{
 		//Player constructor takes a name and a Room
 		movingObjects.add(new Player(command[0], RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Johnny", RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Wisker", RoomManager.getInitialRoom()));
+		movingObjects.add(new Player("Whisker", RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Kitkat", RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Persian", RoomManager.getInitialRoom()));
 
