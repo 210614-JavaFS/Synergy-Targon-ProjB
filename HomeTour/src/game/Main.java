@@ -1,31 +1,74 @@
 package game;
 
 import java.util.ArrayList;
-import fixtures.rooms.Room;
+import java.util.HashSet;
 import java.util.Scanner;
+import fixtures.rooms.Room;
+import game.RoomManager;
 
 public class Main{
 	public static final int houseSize = 1;
 	public static final int numberOfRooms = 1;
 	public static final int maxCommands = 5;
 	
+	private static HashSet<String> lightMoveAction = new HashSet<String>();
+	private static HashSet<String> fastMoveAction = new HashSet<String>();
+	private static HashSet<String> lightInteractAction = new HashSet<String>();
+//	private static HashSet<String> heavyInteractAction = new HashSet<String>();
+	private static HashSet<String> direction = new HashSet<String>();
+	
 	public static void main(String[] args) {
 		//Index 0 indicates player
 		//Index >0 indicates cats
 		//This array store all cats and player instances, they share the Player class
 		ArrayList<Player> movingObjects = new ArrayList<Player>();		
-				
+		
+		// initialize the set of slow moving actions
+		lightMoveAction.add("go");
+		lightMoveAction.add("walk");
+		lightMoveAction.add("pace");
+		lightMoveAction.add("stalk");
 
+		// initialize the set of fast moving actions
+		fastMoveAction.add("dash");
+		fastMoveAction.add("jump");
+		fastMoveAction.add("run");
+		fastMoveAction.add("hop");
+		fastMoveAction.add("leap");
+
+		// initialize the set of light interactions
+		lightInteractAction.add("touch");
+		lightInteractAction.add("pat");
+		lightInteractAction.add("pet");
+		lightInteractAction.add("caress");
+
+
+		// initialize the set of heavy interactions, not implemented
+//		heavyInteractAction.add("smash");
+//		heavyInteractAction.add("kick");
+//		heavyInteractAction.add("punch");
+
+		// initialize the set of moving directions
+		direction.add("south");
+		direction.add("north");
+		direction.add("east");
+		direction.add("west");
+		direction.add("up");
+		direction.add("down");
+		
+		
 		//This flag save the result from players action
 		//this is the end game condition
-		boolean playerInHouse = true;		
+		boolean playerInHouse = true;
 		
 		//this string arrary store the players command
 		//up to "maxCommands" amount of commands can be enter in console
 		String[] command = new String[maxCommands];
 		Scanner userInput = new Scanner(System.in);
 
+		
 		//game start
+		RoomManager.init(numberOfRooms);
 		System.out.println("Please Enter Your Name: ");
 		command = collectInput(userInput);
 
@@ -49,14 +92,15 @@ public class Main{
 
 			//prompt for input and collect
 			System.out.println("What you want to do next: ");			
-			collectInput(userInput);
+			command = collectInput(userInput);
 
 			//execute input command as player taking action
 			playerInHouse = parse(command, movingObjects);
 
 			for (Player movingObjectsIterator: movingObjects) {
-			//action result for player and cats
-
+				//action result for player and cats
+				
+				
 			}
 		}
 
@@ -119,16 +163,82 @@ public class Main{
 	 * 
 	 *****************************************************/
 	private static void printRoom(ArrayList<Player> movingObjects) {
-		
+		Room[] allExits = movingObjects.get(0).currentRoom.getExits();
+		System.out.println("You are in the " + movingObjects.get(0).currentRoom.GetName() + ". \n"
+							+ "You look north and then look around all the directions.");
+		for (Room exits: allExits)
+			if (exits != null) {
+				System.out.println("You can see a door leading to the " + exits.GetName() + ".");
+			}
+		System.out.println("You notice there is a " + "object");
 	}
-
 	
 	/*****************************************************
 	 * This method parse the input command and turn them
 	 * into actions
 	 * 
-	 *****************************************************/
-	private static boolean parse(String[] command, ArrayList<Player> movingObjects) {
-		return false;
+	 *****************************************************/	
+	public static boolean parse(String[] command, ArrayList<Player> movingObjects) {
+		if (lightMoveAction.contains(command[0])) {
+			if (direction.contains(command[1])) {
+				if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
+					System.out.println("You " + command[0] + " into the wall.");
+				}
+				else {
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).GetName() + ".");
+
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).GetName() == "Outside") return false;
+				}
+			}
+			else if (direction.contains(command[2])) {
+				if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
+					System.out.println("You " + command[0] + "into the wall.");
+				}
+				else {
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).GetName() + ".");
+
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[2]).GetName() == "Outside") return false;
+				}
+			}
+			else {
+				System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");
+			}
+		}
+		else if (fastMoveAction.contains(command[0])) {
+			if (direction.contains(command[1]) || direction.contains(command[2])) {
+				if (direction.contains(command[1])) {
+					if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
+						System.out.println("You " + command[0] + "into the wall.");
+					}
+					else {
+						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).GetName() + ".");
+					}
+				}
+				else if (direction.contains(command[2])) {
+					if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
+						System.out.println("You " + command[0] + "into the wall.");
+					}
+					else { 
+						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).GetName() + ".");
+					}
+				}
+				else {
+					System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");					
+				}
+			}			
+		}
+		else if (lightInteractAction.contains(command[0])) {
+			System.out.println("You " + command[0]);
+		}
+//		else if (heavyInteractAction.contains(command[0])) {
+// not implemented			
+//		}
+		else {
+			System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");
+		}
+		
+		return true;
 	}
 }
