@@ -3,13 +3,20 @@ package fixtures.rooms;
 import fixtures.Fixture;
 
 public class Room extends Fixture {
-		private Room[] exits;
+	
+		// array which holds the adjacent rooms to the room you're currently in
+		// You might decide that a room in a particular direction always uses a certain index, e.g. 
+		// a north exit always goes in index 0, an east exit always goes in index 1, etc.
+		// If so, then the size of this array depends on how many directions you want to support.
+		public Room[] exits;
+		
 		public Room(String name, String shortDesc, String longDesc)	{
 			super(name, shortDesc, longDesc);
 			this.exits = new Room[9];
 		}
 		
-		public void setExits() { //add the vailable exits
+		
+		public void setExits() { //add the available exits
 			
 		}
 		
