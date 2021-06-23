@@ -41,6 +41,6 @@ public class Player extends Thread {
 	}
 
 	public void run(boolean isACat) { // Cat action
-		System.out.println("Your cat " + this.name + "is walking ");
+		System.out.println("Your cat " + this.name + " is walking ");
 	}
 }

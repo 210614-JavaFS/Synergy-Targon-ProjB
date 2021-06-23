@@ -7,8 +7,7 @@ import fixtures.rooms.Room;
 import game.RoomManager;
 
 public class Main{
-	public static final int houseSize = 1;
-	public static final int numberOfRooms = 9;
+	public static final int numberOfRooms = 7;
 	public static final int maxCommands = 5;
 	
 	private static HashSet<String> lightMoveAction = new HashSet<String>();
@@ -76,7 +75,7 @@ public class Main{
 		//Player constructor takes a name and a Room
 		movingObjects.add(new Player(command[0], RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Johnny", RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Wisker", RoomManager.getInitialRoom()));
+		movingObjects.add(new Player("Whisker", RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Kitkat", RoomManager.getInitialRoom()));
 		movingObjects.add(new Player("Persian", RoomManager.getInitialRoom()));
 
@@ -91,7 +90,7 @@ public class Main{
 			printRoom(movingObjects);
 
 			//prompt for input and collect
-			System.out.println("What you want to do next: ");			
+			System.out.println("What do you want to do next: ");			
 			command = collectInput(userInput);
 
 			//execute input command as player taking action
@@ -165,7 +164,7 @@ public class Main{
 	private static void printRoom(ArrayList<Player> movingObjects) {
 		Room[] allExits = movingObjects.get(0).currentRoom.getExits();
 		System.out.println("You are in the " + movingObjects.get(0).currentRoom.GetName() + ". \n"
-							+ "You look north and then look around all the directions.");
+							+ "You look all around you.");
 		for (Room exits: allExits)
 			if (exits != null) {
 				System.out.println("You can see a door leading to the " + exits.GetName() + ".");
@@ -203,7 +202,7 @@ public class Main{
 				}
 			}
 			else {
-				System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");
+				System.out.println("You take a deeeeeep breath, and are rethinking what you want to do.");
 			}
 		}
 		else if (fastMoveAction.contains(command[0])) {
@@ -225,7 +224,7 @@ public class Main{
 					}
 				}
 				else {
-					System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");					
+					System.out.println("You take a deeeeeep breath, and are rethinking what you want to do.");					
 				}
 			}			
 		}
@@ -236,7 +235,7 @@ public class Main{
 // not implemented			
 //		}
 		else {
-			System.out.println("You take a deeeeeep breath, and rethinking what you want to do.");
+			System.out.println("You take a deeeeeep breath, and are rethinking what you want to do.");
 		}
 		
 		return true;

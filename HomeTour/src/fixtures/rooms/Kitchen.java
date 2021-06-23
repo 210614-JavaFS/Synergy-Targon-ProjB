@@ -17,7 +17,6 @@ public class Kitchen extends Room {
 	
 	Microwave mic = new Microwave();
 	
-	
 	//Exit something something
 
 }
