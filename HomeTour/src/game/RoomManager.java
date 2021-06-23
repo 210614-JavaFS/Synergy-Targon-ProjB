@@ -30,17 +30,18 @@ public class RoomManager {
 		Basement basement = new Basement();	
 		Foyer foyer = new Foyer();
 		Kitchen kitchen = new Kitchen();
+		Attic attic = new Attic();
 
 
 		//put rooms into house, assign your rooms to an index in here
 		rooms[1] = foyer;
 		rooms[2] = basement;
 		rooms[3] = kitchen;
+		rooms[4] = attic;
 		rooms[0] = basement;
 
 
 		//starting room, should be be change to foyer once done constructing
 		RoomManager.initialRoom = foyer;
-		RoomManager.initialRoom = basement;
 	}
 }

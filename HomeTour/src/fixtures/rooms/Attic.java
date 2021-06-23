@@ -1,6 +1,10 @@
 package fixtures.rooms;
 
+import fixtures.objects.Boxes;
+
 public class Attic extends Room{
+	
+	Boxes box = new Boxes();
 	
 	//Brendan's room, everything can change because it's early
 	
