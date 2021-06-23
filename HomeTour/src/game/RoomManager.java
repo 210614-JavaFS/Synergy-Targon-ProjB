@@ -45,7 +45,6 @@ public class RoomManager {
 		rooms[5] = bathroom;
 		rooms[6] = lounge;
 
-
 		//starting room, should be be change to foyer once done constructing
 		RoomManager.initialRoom = foyer;
 	}
