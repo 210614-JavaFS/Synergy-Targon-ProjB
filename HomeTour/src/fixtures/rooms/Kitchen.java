@@ -4,6 +4,8 @@ import fixtures.objects.Microwave;
 
 public class Kitchen extends Room {
 	
+	Microwave mic = new Microwave();
+	
 	public Kitchen() {
 		super("Kitchen",
 				"an immaculate, all-white kitchen",
