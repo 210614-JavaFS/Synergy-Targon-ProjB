@@ -45,6 +45,9 @@ public class RoomManager {
 		rooms[5] = bathroom;
 		rooms[6] = lounge;
 
+		//put your setExits here
+		room[1].setExits();
+
 		//starting room, should be be change to foyer once done constructing
 		RoomManager.initialRoom = foyer;
 	}
