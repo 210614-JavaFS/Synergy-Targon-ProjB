@@ -89,17 +89,19 @@ public class Main{
 			//print player surrounding description
 			printRoom(player, cats);
 
+			//print action result for cats
+			for (Cats catsIterator: cats) {
+				if (catsIterator.getCatActions() != null)
+					if (player.currentRoom.getName().equals(catsIterator.currentRoom.getName()))
+						System.out.println(catsIterator.getCatActions());
+			}
+			
 			//prompt for input and collect
 			System.out.println("What do you want to do next: ");			
 			command = collectInput(userInput);
 
 			//execute input command as player taking action
 			playerInHouse = parse(command, player, cats);
-
-			for (Cats catsIterator: cats) {
-				//action result for player and cats
-				System.out.println(catsIterator.getCatActions());
-			}
 
 		}
 
