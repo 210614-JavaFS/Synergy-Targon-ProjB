@@ -21,8 +21,17 @@ public class LoungeRoom extends Room {
 		   + "Opposite to the kitchen you spot stairs going down to the basement."    
 		   +"\n"
 			+ "You let out a sigh as you crouch down next to the translucent window being showered with snowdrops.");
-
-			//this.exits[6] = RoomManager.getRoom(â€œkitchenâ€�)??;
-			//this.exits[4] = RoomManager.getRoom(â€œbasementâ€�)??;
+		
+		tv = new TV();
+		
+	}
+	
+	public void interactWith (String tvInteraction) {
+		
+		System.out.println("A mysterious looking " + tvInteraction);
+		
+		if (tvInteraction.equals("tv")) {
+			tv.interactWith();
+		}
 	}
 }
