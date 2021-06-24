@@ -19,21 +19,7 @@ public class Room extends Fixture {
 		
 		
 		public void setExits(int choice, Room exits) { //add the available exits
-			String direction = "";
-			switch (choice) {
-				case 8:
-					direction = "north";
-					break;
-				case 2:
-					direction = "south";
-					break;
-				case 6:
-					direction = "east";
-					break;
-				case 4:
-					direction = "west";
-					break;
-			}
+			this.exits[choice] = exits
 		}
 		
 		public Room[] getExits() { //Return all exits, need to check empty *.isNull() in roomModifier
