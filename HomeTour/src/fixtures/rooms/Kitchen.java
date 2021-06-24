@@ -1,5 +1,7 @@
 package fixtures.rooms;
 
+import fixtures.objects.Microwave;
+
 public class Kitchen extends Room {
 	
 	public Kitchen() {
@@ -9,8 +11,12 @@ public class Kitchen extends Room {
 				+ "\n"
 						+ "To the south is dirty white bathroom, with a pungent odor coming from it... someone must have forgot to flush the toilet!"
 				+ "\n"
-						+ "To the west is a living room with a televison. ");
+						+ "To the west is a cozy-looking lounge room with an outdated televison. ");
 	
 	}
+	
+	Microwave mic = new Microwave();
+	
+	//Exit something something
 
 }
