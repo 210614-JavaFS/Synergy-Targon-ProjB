@@ -4,6 +4,7 @@ import fixtures.objects.Microwave;
 
 public class Kitchen extends Room {
 	
+	//added my object to my room
 	Microwave mic = new Microwave();
 	
 	public Kitchen() {
