@@ -86,7 +86,7 @@ public class Player extends Thread {
 					break;
 
 				default:
-					if (this.currentRoom.GetName() == "Basement")
+					if (this.currentRoom.getName() == "Basement")
 						randomAction = (int)Math.random()*100;
 					if (randomAction > 80) {
 						System.out.println(this.name + " is using the litter box.");
