@@ -4,12 +4,7 @@ import fixtures.objects.Candle;
 
 public class Foyer extends Room {
 
-	Candle candle = new Candle();
-	
-	
-	
-	
-	// need to add interactive object and exit directions
+	private Candle candle;
 	
 	// fletcher's room
 	public Foyer() {
@@ -20,7 +15,16 @@ public class Foyer extends Room {
 				+ "To your right you see a spacious tile file leading to a bathroom"
 				+ "Straight ahead you can see a small candle"
 				+ "Behind you is the door to the house");
-	}	
+		
+		candle = new Candle();
+	}
 	
+	public void interactWith(String whatToInteract) {
+		System.out.println("here here " +whatToInteract);
+		if (whatToInteract.equals("candle")) {
+			candle.interactWith();
+		}
+		
+	}
 	
 }

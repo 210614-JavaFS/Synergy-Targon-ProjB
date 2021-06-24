@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import fixtures.rooms.*;
 import game.RoomManager;
+import fixtures.objects.*;
 
 public class Main{
 	public static final int numberOfRooms = 8;
@@ -173,7 +174,11 @@ public class Main{
 			if (exits != null) {
 				System.out.println("You can see a door leading to the " + exits.getName() + ".");
 			}
-		System.out.println("You notice there is a " + "object");
+		
+		//need to be able to print the name of the object of the current room
+		System.out.println("You notice there is a " +allExits[2] + "object");
+		
+		
 	}
 	
 	/*****************************************************
