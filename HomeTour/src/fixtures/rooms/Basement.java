@@ -21,8 +21,6 @@ public class Basement extends Room {
 	
 	public void interactWith(String whatToInteract) {
 
-		System.out.println("here here: " + whatToInteract);
-		
 		if (whatToInteract.equals("cat tree")) {
 			this.catTree.interactWith();
 		}
