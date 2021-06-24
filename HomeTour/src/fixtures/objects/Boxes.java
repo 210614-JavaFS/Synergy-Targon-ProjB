@@ -12,7 +12,9 @@ public class Boxes extends Fixture implements Interactive{
 	
 
 	public void interactWith() {
-		// TODO Auto-generated method stub
+
+		System.out.println("You open the box on the ground in fron of you");
+		this.setLongDescription("Inside of the cardboard box is old clothes and other items, filled with memories of the previous owners.");
 		
 	}
 
