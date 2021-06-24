@@ -14,7 +14,8 @@ public class Cats extends Thread {
 		super(name);
 		this.name = name;
 		this.currentRoom = placingRoom;
-
+		
+		catActions = new String("Your cat " + this.name + " is welcoming you by the front gate.");
 		Cats.gameContinue = true;
 		Cats.catNumber ++;
 	}
@@ -48,7 +49,7 @@ public class Cats extends Thread {
 								}
 								else {
 									this.currentRoom = targetRoom;
-									catActions = new String("Your cat " + this.name + "is walking. ");
+									catActions = new String("Your cat " + this.name + "is walking towards " + targetRoom + " .");
 								}							
 							}
 					}
@@ -61,7 +62,7 @@ public class Cats extends Thread {
 
 				default:
 					if (this.currentRoom.getName() == "Basement")
-						randomAction = (int)Math.random()*100;
+						randomAction = (int)(Math.random()*100);
 					if (randomAction > 80) {
 						catActions = new String(this.name + " is using the litter box.");
 					}
@@ -71,7 +72,7 @@ public class Cats extends Thread {
 			}
 			
 			try {
-				Thread.sleep(10000 + (long)Math.random()*10000);
+				Thread.sleep(10000 + (int)(Math.random()*10000));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
