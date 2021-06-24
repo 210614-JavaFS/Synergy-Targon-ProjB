@@ -186,13 +186,14 @@ public class Main{
 				else {
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 
-					//moving to another room
-					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
-
 					//leaving house
 					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
-				}
-			}
+					else {
+						//moving to another room
+						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+						}
+					}
+			}	
 			else if (direction.contains(command[2])) {
 				if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
 					System.out.println("You " + command[0] + "into the wall.");
@@ -200,11 +201,12 @@ public class Main{
 				else {
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
 
-					//moving to another room
-					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
-
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[2]).getName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					else {
+						//moving to another room
+						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+					}
 				}
 			}
 			else {
@@ -212,40 +214,38 @@ public class Main{
 			}
 		}
 		else if (fastMoveAction.contains(command[0])) {
-			if (direction.contains(command[1]) || direction.contains(command[2])) {
-				if (direction.contains(command[1])) {
-					if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
-						System.out.println("You " + command[0] + "into the wall.");
-					}
-					else {
-						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
-
-					//moving to another room
-					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
-
-					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
-					}
-				}
-				else if (direction.contains(command[2])) {
-					if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
-						System.out.println("You " + command[0] + "into the wall.");
-					}
-					else { 
-						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
-
-					//moving to another room
-					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
-
-					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
-					}
+			if (direction.contains(command[1])) {
+				if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
+					System.out.println("You " + command[0] + "into the wall.");
 				}
 				else {
-					System.out.println("You take a deeeeeep breath, and are rethinking what you want to do.");					
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					else {
+						//moving to another room
+						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+					}
 				}
+			}
+			else if (direction.contains(command[2])) {
+				if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
+					System.out.println("You " + command[0] + "into the wall.");
+				}
+				else { 
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					else {
+						//moving to another room
+						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+					}
+				}
+			}
+			else {
+				System.out.println("You take a deeeeeep breath, and are rethinking what you want to do.");
+			     }
 			}			
-		}
 		else if (lightInteractAction.contains(command[0])) {
 			System.out.println("You " + command[0]);
 // find a way to put room.interact in there : )
