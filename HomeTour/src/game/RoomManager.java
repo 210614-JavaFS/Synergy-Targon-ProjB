@@ -34,7 +34,7 @@ public class RoomManager {
 		Garage garage = new Garage();
 		Bathroom bathroom = new Bathroom();
 		LoungeRoom  lounge = new LoungeRoom();
-
+		Outside outside = new Outside();
 
 		//put rooms into house, assign your rooms to an index in here
 		rooms[0] = foyer;
@@ -44,10 +44,12 @@ public class RoomManager {
 		rooms[4] = garage;
 		rooms[5] = bathroom;
 		rooms[6] = lounge;
+		rooms[7] = outside;
 
 		//put your setExits here
 		rooms[0].setExits("west", garage);
 		rooms[0].setExits("east", bathroom);
+		rooms[0].setExits("south", outside);
 		rooms[1].setExits("east", lounge);
 		rooms[1].setExits("south", attic);
 		rooms[2].setExits("west", lounge);

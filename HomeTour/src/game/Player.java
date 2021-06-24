@@ -26,7 +26,17 @@ public class Player extends Thread {
 		Player.gameContinue = true;
 		Player.catNumber ++;
 	}
+/*
+	public void start() {
+		Player.gameContinue = true;
+		run();
+	}
+	*/
 
+	public void terminating() {
+		Player.gameContinue = false;
+	}
+	
 	public void run() { // Player action
 
 		if (isACat) {
@@ -56,7 +66,7 @@ public class Player extends Thread {
 						break;
 
 					case 1:
-						System.out.println(this.name + "is sleeping.");
+						System.out.println(this.name + " is sleeping.");
 						try {
 							wait();
 						} catch (InterruptedException e1) {
@@ -75,9 +85,10 @@ public class Player extends Thread {
 							System.out.println(this.name + " is playing with toys.");
 						}
 				}
+				System.out.println("Cats Testing." + Player.gameContinue);
 				
 				try {
-					Thread.sleep((long)Math.random()*30000);
+					Thread.sleep(10000 + (long)Math.random()*10000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -86,15 +97,14 @@ public class Player extends Thread {
 
 		}
 		else {
-			while (gameContinue) {
+			while (Player.gameContinue) {
+				System.out.println("Player Testing." + Player.gameContinue);
 				try {
-					Thread.sleep(50);
+					Thread.sleep(10000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
-				if (this.currentRoom.getName() == "Outside") Player.gameContinue = false;
 			}
 		}
 	}

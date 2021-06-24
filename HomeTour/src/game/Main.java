@@ -7,7 +7,7 @@ import fixtures.rooms.Room;
 import game.RoomManager;
 
 public class Main{
-	public static final int numberOfRooms = 7;
+	public static final int numberOfRooms = 8;
 	public static final int maxCommands = 5;
 	
 	private static HashSet<String> lightMoveAction = new HashSet<String>();
@@ -16,7 +16,7 @@ public class Main{
 //	private static HashSet<String> heavyInteractAction = new HashSet<String>();
 	private static HashSet<String> direction = new HashSet<String>();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		//Index 0 indicates player
 		//Index >0 indicates cats
 		//This array store all cats and player instances, they share the Player class
@@ -60,7 +60,7 @@ public class Main{
 		//this is the end game condition
 		boolean playerInHouse = true;
 		
-		//this string arrary store the players command
+		//this string array store the players command
 		//up to "maxCommands" amount of commands can be enter in console
 		String[] command = new String[maxCommands];
 		Scanner userInput = new Scanner(System.in);
@@ -95,13 +95,17 @@ public class Main{
 
 			//execute input command as player taking action
 			playerInHouse = parse(command, movingObjects);
-
+/*
 			for (Player movingObjectsIterator: movingObjects) {
 				//action result for player and cats
 				
 				
 			}
+*/
 		}
+
+		for (Player movingObjectsIterator: movingObjects)
+			movingObjectsIterator.terminating();
 
 		// kill all threads
 		for (Player movingObjectsIterator: movingObjects)
@@ -187,7 +191,7 @@ public class Main{
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
 						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
@@ -202,7 +206,7 @@ public class Main{
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
 						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
@@ -221,7 +225,7 @@ public class Main{
 				else {
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
 						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
@@ -235,7 +239,7 @@ public class Main{
 				else { 
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
 						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
