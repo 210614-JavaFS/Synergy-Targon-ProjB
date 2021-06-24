@@ -3,7 +3,7 @@ package fixtures.objects;
 import fixtures.Fixture;
 
 public class CatLitterBox extends Fixture implements Interactive {
-	public CatLitterBox(String name, String shortDesc, String longDesc) {
+	public CatLitterBox() {
 		super("litter box",
 				"Line up toilets for your small masters.", 
 				"Love thy neighbour as thyself, but even thyself flush toilets right?\n"
@@ -12,5 +12,6 @@ public class CatLitterBox extends Fixture implements Interactive {
 	}
 	
 	public void interactWith () {
+		System.out.println("This is Litter box.");
 	}	
 }

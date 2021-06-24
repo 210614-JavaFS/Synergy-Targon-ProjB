@@ -37,4 +37,3 @@ public class LoungeRoom extends Room {
 		
 	}
 }
-	
