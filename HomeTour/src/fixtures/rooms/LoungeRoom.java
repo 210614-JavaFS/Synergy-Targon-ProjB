@@ -5,7 +5,7 @@ import fixtures.objects.TV;
 public class LoungeRoom extends Room {
 	
 	//creates TV object
-	private TV tv = new TV();
+	TV tv = new TV();
 
 
 	public LoungeRoom() {
@@ -21,8 +21,7 @@ public class LoungeRoom extends Room {
 		   + "Opposite to the kitchen you spot stairs going down to the basement."    
 		   +"\n"
 			+ "You let out a sigh as you crouch down next to the translucent window being showered with snowdrops.");
-
-			
+		
 		tv = new TV();
 		
 	}
@@ -34,6 +33,5 @@ public class LoungeRoom extends Room {
 		if (tvInteraction.equals("tv")) {
 			tv.interactWith();
 		}
-		
 	}
 }
