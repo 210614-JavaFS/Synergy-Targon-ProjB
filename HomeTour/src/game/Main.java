@@ -163,11 +163,11 @@ public class Main{
 	 *****************************************************/
 	private static void printRoom(ArrayList<Player> movingObjects) {
 		Room[] allExits = movingObjects.get(0).currentRoom.getExits();
-		System.out.println("You are in the " + movingObjects.get(0).currentRoom.GetName() + ". \n"
+		System.out.println("You are in the " + movingObjects.get(0).currentRoom.getName() + ". \n"
 							+ "You look all around you.");
 		for (Room exits: allExits)
 			if (exits != null) {
-				System.out.println("You can see a door leading to the " + exits.GetName() + ".");
+				System.out.println("You can see a door leading to the " + exits.getName() + ".");
 			}
 		System.out.println("You notice there is a " + "object");
 	}
@@ -184,10 +184,10 @@ public class Main{
 					System.out.println("You " + command[0] + " into the wall.");
 				}
 				else {
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).GetName() + ".");
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).GetName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
 				}
 			}
 			else if (direction.contains(command[2])) {
@@ -195,10 +195,10 @@ public class Main{
 					System.out.println("You " + command[0] + "into the wall.");
 				}
 				else {
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).GetName() + ".");
+					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[2]).GetName() == "Outside") return false;
+					if (movingObjects.get(0).currentRoom.getExits(command[2]).getName() == "Outside") return false;
 				}
 			}
 			else {
@@ -212,7 +212,7 @@ public class Main{
 						System.out.println("You " + command[0] + "into the wall.");
 					}
 					else {
-						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).GetName() + ".");
+						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 					}
 				}
 				else if (direction.contains(command[2])) {
@@ -220,7 +220,7 @@ public class Main{
 						System.out.println("You " + command[0] + "into the wall.");
 					}
 					else { 
-						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).GetName() + ".");
+						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
 					}
 				}
 				else {

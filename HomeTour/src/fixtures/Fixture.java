@@ -12,38 +12,38 @@ public abstract class Fixture {
 		
 		// this is the constructor which is used for creating our custom rooms and interactive objects
 		public Fixture(String name, String shortDesc, String longDesc)	{
-			SetName(name);
-			SetShortDescription(shortDesc);
-			SetLongDescription(longDesc);
+			setName(name);
+			setShortDescription(shortDesc);
+			setLongDescription(longDesc);
 		}
 		
 		// getter method for name
-		public String GetName() {
+		public String getName() {
 			return name;
 		}
 		
 		// getter method for short description
-		public String GetShortDescription() {
+		public String getShortDescription() {
 			return shortDescription;
 		}
 		
 		// getter method for long description
-		public String GetLongDescription() {
+		public String getLongDescription() {
 			return longDescription;
 		}
 
 		// setter method for name
-		public void SetName(String name) {
+		public void setName(String name) {
 			this.name = name;
 		}
 		
 		// setter method for long description
-		public void SetShortDescription(String shortDesc) {
+		public void setShortDescription(String shortDesc) {
 			shortDescription = shortDesc;
 		}
 		
 		// setter method for long description
-		public void SetLongDescription(String longDesc) {
+		public void setLongDescription(String longDesc) {
 			longDescription = longDesc;
 		}
 }
