@@ -1,6 +1,7 @@
 package fixtures.rooms;
 
 import fixtures.Fixture;
+import fixtures.objects.*;
 
 public class Room extends Fixture {
 	
