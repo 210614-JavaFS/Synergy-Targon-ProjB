@@ -12,14 +12,29 @@ public class Room extends Fixture {
 		
 		public Room(String name, String shortDesc, String longDesc)	{
 			super(name, shortDesc, longDesc);
-			this.exits = new Room[9];
+			this.exits = new Room[4];
 		}
 		
 		//we need a second parameter which is a room object
 		
 		
-		public void setExits(int choice, Room exits) { //add the available exits
-			this.exits[choice] = exits
+		public void setExits(String direction, Room exits) { //add the available exits
+			switch (direction) {
+				case "north":
+					this.exits[0] = exits;
+					break;
+				case "south":
+					this.exits[1] = exits;
+					break;
+				case "east":
+					this.exits[2] = exits;
+					break;
+				case "west":
+					this.exits[3] = exits;
+					break;
+				default:
+					return null;
+			}
 		}
 		
 		public Room[] getExits() { //Return all exits, need to check empty *.isNull() in roomModifier
@@ -29,13 +44,17 @@ public class Room extends Fixture {
 		public Room getExits(String direction) { //Return a single exit by direction
 			switch (direction) {
 				case "north":
-					return exits[8];
+					return exits[0];
+					break;
 				case "south":
-					return exits[2];
+					return exits[1];
+					break;
 				case "east":
-					return exits[6];
+					return exits[2];
+					break;
 				case "west":
-					return exits[4];
+					return exits[3];
+					break;
 				default:
 					return null;
 			}

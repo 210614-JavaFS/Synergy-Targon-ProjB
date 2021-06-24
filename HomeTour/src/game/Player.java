@@ -45,6 +45,7 @@ public class Player extends Thread {
 			}
 
 			if (this.currentRoom.getName() == "Outside") Player.gameContinue = false;
+			Player.gameContinue = false;
 		}
 	}
 
