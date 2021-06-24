@@ -29,7 +29,7 @@ public class LoungeRoom extends Room {
 	
 	public void interactWith (String tvInteraction) {
 		
-		System.out.println(" " + tvInteraction);
+		System.out.println("A mysterious looking " + tvInteraction);
 		
 		if (tvInteraction.equals("tv")) {
 			tv.interactWith();
