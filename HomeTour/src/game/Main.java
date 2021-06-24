@@ -186,6 +186,9 @@ public class Main{
 				else {
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
 
+					//moving to another room
+					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+
 					//leaving house
 					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
 				}
@@ -196,6 +199,9 @@ public class Main{
 				}
 				else {
 					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
+
+					//moving to another room
+					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
 
 					//leaving house
 					if (movingObjects.get(0).currentRoom.getExits(command[2]).getName() == "Outside") return false;
@@ -213,6 +219,12 @@ public class Main{
 					}
 					else {
 						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
+
+					//moving to another room
+					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
 					}
 				}
 				else if (direction.contains(command[2])) {
@@ -221,6 +233,12 @@ public class Main{
 					}
 					else { 
 						System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
+
+					//moving to another room
+					movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+
+					//leaving house
+					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName() == "Outside") return false;
 					}
 				}
 				else {
@@ -230,6 +248,8 @@ public class Main{
 		}
 		else if (lightInteractAction.contains(command[0])) {
 			System.out.println("You " + command[0]);
+// find a way to put room.interact in there : )
+
 		}
 //		else if (heavyInteractAction.contains(command[0])) {
 // not implemented			
