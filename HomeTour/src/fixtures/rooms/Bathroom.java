@@ -1,7 +1,6 @@
 package fixtures.rooms;
 
-
-	public class Bathroom extends Room {
+public class Bathroom extends Room {
 		
 		public Bathroom() {
 			super("The Bathroom", "White dirty bathroom", "As you enter the bathroom "+
