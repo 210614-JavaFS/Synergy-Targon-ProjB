@@ -46,15 +46,20 @@ public class RoomManager {
 		rooms[6] = lounge;
 
 		//put your setExits here
-		rooms[0].setExits("east", bathroom);
 		rooms[0].setExits("west", garage);
+		rooms[0].setExits("east", bathroom);
+		rooms[1].setExits("east", lounge);
 		rooms[1].setExits("south", attic);
+		rooms[2].setExits("west", lounge);
+		rooms[2].setExits("south", bathroom);
+		rooms[3].setExits("north", basement);
+		rooms[3].setExits("south", garage);
+		rooms[4].setExits("west", attic);
 		rooms[4].setExits("east", foyer);
-		rooms[4].setExits("south", attic);
-		rooms[4].setExits("east", foyer);
-		rooms[4].setExits("south", attic);
-		rooms[6].setExits("east", kitchen);
+		rooms[5].setExits("west", foyer);
+		rooms[5].setExits("north", kitchen);
 		rooms[6].setExits("west", basement);
+		rooms[6].setExits("east", kitchen);
 
 
 		//starting room, should be be change to foyer once done constructing

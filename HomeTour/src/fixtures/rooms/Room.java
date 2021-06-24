@@ -33,7 +33,7 @@ public class Room extends Fixture {
 					this.exits[3] = exits;
 					break;
 				default:
-					break;
+					return;
 			}
 		}
 		
