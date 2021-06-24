@@ -15,6 +15,9 @@ public class Room extends Fixture {
 			this.exits = new Room[4];
 		}
 		
+		public void interactWith(String whatToInteract) {
+			System.out.println("nothing is here.");
+		}
 		//we need a second parameter which is a room object
 		
 		
