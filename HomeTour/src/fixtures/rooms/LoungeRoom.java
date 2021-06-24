@@ -5,7 +5,7 @@ import fixtures.objects.TV;
 public class LoungeRoom extends Room {
 	
 	//creates TV object
-	private TV tv = new TV();
+	TV tv = new TV();
 
 
 	public LoungeRoom() {
@@ -22,18 +22,7 @@ public class LoungeRoom extends Room {
 		   +"\n"
 			+ "You let out a sigh as you crouch down next to the translucent window being showered with snowdrops.");
 
-			
-		tv = new TV();
-		
-	}
-	
-	public void interactWith (String tvInteraction) {
-		
-		System.out.println(" " + tvInteraction);
-		
-		if (tvInteraction.equals("tv")) {
-			tv.interactWith();
-		}
-		
+			//this.exits[6] = RoomManager.getRoom(â€œkitchenâ€�)??;
+			//this.exits[4] = RoomManager.getRoom(â€œbasementâ€�)??;
 	}
 }

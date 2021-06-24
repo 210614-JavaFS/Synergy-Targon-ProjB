@@ -95,13 +95,12 @@ public class Main{
 
 			//execute input command as player taking action
 			playerInHouse = parse(command, movingObjects);
-/*
+
 			for (Player movingObjectsIterator: movingObjects) {
 				//action result for player and cats
-				
-				
+				System.out.println(movingObjectsIterator.getCatActions());
 			}
-*/
+
 		}
 
 		for (Player movingObjectsIterator: movingObjects)
