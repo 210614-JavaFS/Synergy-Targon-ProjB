@@ -17,8 +17,5 @@ public class Foyer extends Room {
 				+ "To your right you see a spacious tile file leading to a bathroom"
 				+ "Straight ahead you can see a small candle"
 				+ "Behind you is the door to the house");
-		
-			this.setExits("east", this);
-			this.setExits("west", this);
 	}	
 }

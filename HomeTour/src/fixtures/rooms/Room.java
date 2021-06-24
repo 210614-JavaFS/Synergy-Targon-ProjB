@@ -45,13 +45,13 @@ public class Room extends Fixture {
 			switch (direction) {
 				case "north":
 					return exits[0];
-			case "south":
+				case "south":
 					return exits[1];
-			case "east":
+				case "east":
 					return exits[2];
-			case "west":
+				case "west":
 					return exits[3];
-			default:
+				default:
 					return null;
 			}
 		}
