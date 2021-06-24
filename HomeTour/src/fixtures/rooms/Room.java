@@ -2,10 +2,6 @@ package fixtures.rooms;
 
 import fixtures.Fixture;
 
-import fixtures.objects.*;
-import java.util.*;
-import fixtures.objects.Interactive;
-
 public class Room extends Fixture {
 	
 		// array which holds the adjacent rooms to the room you're currently in
@@ -17,7 +13,6 @@ public class Room extends Fixture {
 		public Room(String name, String shortDesc, String longDesc)	{
 			super(name, shortDesc, longDesc);
 			this.exits = new Room[4];
-			
 		}
 		
 		public void interactWith(String whatToInteract) {
