@@ -6,6 +6,9 @@ public class Foyer extends Room {
 
 	Candle candle = new Candle();
 	
+	
+	
+	
 	// need to add interactive object and exit directions
 	
 	// fletcher's room
@@ -18,4 +21,6 @@ public class Foyer extends Room {
 				+ "Straight ahead you can see a small candle"
 				+ "Behind you is the door to the house");
 	}	
+	
+	
 }
