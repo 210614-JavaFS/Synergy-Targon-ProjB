@@ -25,5 +25,5 @@ public class CatLitterBox extends Fixture implements Interactive {
 	
 	public void setLitter() {
 		litter = true;
-	}
+	}	
 }
