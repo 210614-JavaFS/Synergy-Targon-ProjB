@@ -18,4 +18,10 @@ public class Kitchen extends Room {
 		
 	}
 	
+	public void interactWith(String micInteraction) {
+		if(micInteraction.equals("microwave")) {
+			mic.interactWith();
+		}
+	}
+	
 }
