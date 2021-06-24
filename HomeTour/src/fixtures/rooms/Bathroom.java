@@ -1,10 +1,6 @@
 package fixtures.rooms;
 
-import fixtures.objects.Toilet;
-
 public class Bathroom extends Room {
-		
-		Toilet toilet = new Toilet();
 		
 		public Bathroom() {
 			super("The Bathroom", "White dirty bathroom", "As you enter the bathroom "+

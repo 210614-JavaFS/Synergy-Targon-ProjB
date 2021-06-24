@@ -247,7 +247,16 @@ public class Main{
 			     }
 			}			
 		else if (lightInteractAction.contains(command[0])) {
-			System.out.println("You " + command[0]);
+			for (int commandIndex = 2; commandIndex < maxCommands; commandIndex++) {
+				if (command[commandIndex] != null)
+					command[1] = command[1] + ' ' + command[commandIndex];
+			}
+			int commandIndex = command[1].length() -1;
+			while (command[1].charAt(commandIndex) == ' ') commandIndex--;
+			command[1] = command[1].substring(0, commandIndex+1);
+			
+			System.out.println("You " + command[0] + " the " + command[1]);
+			movingObjects.get(0).currentRoom.interactWith(command[1]);
 // find a way to put room.interact in there : )
 
 		}

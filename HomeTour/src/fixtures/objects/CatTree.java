@@ -3,7 +3,7 @@ package fixtures.objects;
 import fixtures.Fixture;
 
 public class CatTree extends Fixture implements Interactive {
-	public CatTree(String name, String shortDesc, String longDesc) {
+	public CatTree() {
 		super("cat tree",
 				"A six foot tall cat tree sits in the corner.", 
 				"Perch, lookout tower, dangling toys, you spent a forturne to please your cute masters. \n"
@@ -11,6 +11,7 @@ public class CatTree extends Fixture implements Interactive {
 				+ "Sometimes are gentle sniffing and licking, sometimes a playfull bite, but if its a scratch, they mean business.");
 	}
 	
-	public void interactWith () {
+	public void interactWith() {
+			System.out.println("This is cat tree.");
 	}	
 }
