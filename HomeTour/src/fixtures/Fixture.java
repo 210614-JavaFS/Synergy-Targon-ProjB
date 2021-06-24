@@ -10,6 +10,8 @@ public abstract class Fixture {
 		private String longDescription;
 		
 		
+		
+		
 		// this is the constructor which is used for creating our custom rooms and interactive objects
 		public Fixture(String name, String shortDesc, String longDesc)	{
 			setName(name);

@@ -3,7 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
-import fixtures.rooms.Room;
+import fixtures.rooms.*;
 import game.RoomManager;
 
 public class Main{
@@ -249,7 +249,6 @@ public class Main{
 		else if (lightInteractAction.contains(command[0])) {
 			System.out.println("You " + command[0]);
 // find a way to put room.interact in there : )
-
 		}
 //		else if (heavyInteractAction.contains(command[0])) {
 // not implemented			
