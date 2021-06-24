@@ -24,7 +24,7 @@ public class Garage extends Room {
 	
 	public void interactWith(String interactLawnmower) {
 
-		System.out.println("Vroom!: " + interactLawnmower);
+		System.out.println("Vroom!:");
 		
 		if (interactLawnmower.equals("lawnmower")) {
 			lawnmower.interactWith();
