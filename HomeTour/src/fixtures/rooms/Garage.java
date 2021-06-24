@@ -5,27 +5,34 @@ import fixtures.objects.Lawnmower;
 
 public class Garage extends Room {
 	
-	//create a lawnmower object
-	Lawnmower lawnmower = new Lawnmower();
+	private Lawnmower lawnmower;
 	
-
 	public Garage() {
 		super("Garage",
 				"A cluttered garage",
-				"The storage location for the houses cars and many of its tools."
-				+ "The foyer is to the east where you see the entry to the house can be seen."
-				+ "You push your way through a pile of rusty tools, brushing past used tires, where a rake sits at the top of the staircase leading to the basement.");
-		
+				"The storage location for the houses cars and many of its tools. \n"
+				+ "You step into the garage, where the floor beneath you is rough and stacks of items take up your vision. \n"
+				+ "You push your way through a pile of rusty tools, brushing past used tires, where a rake sits at the top of the staircase leading to the basement. \n"
+				+ "Through the windows, you notice the overgrown grass out front, when the sight of the old lawnmower below you catches your eye.");
+			
+		lawnmower = new Lawnmower();
 		
 
 
 	
-		//this.exits[?] = RoomManager.getRoom
-		//this.exits[?] = RoomManager.getRoom
-}
 	
+	}
+	
+	public void interactWith(String whatToInteract) {
 
+		System.out.println("Vroom!: " + whatToInteract);
 		
+		if (whatToInteract.equals("lawnmower")) {
+			lawnmower.interactWith();
+		}
+		
+	}
+	
 }
 
 
