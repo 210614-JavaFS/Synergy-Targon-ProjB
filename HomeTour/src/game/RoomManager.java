@@ -51,6 +51,11 @@ public class RoomManager {
 		rooms[1].setExits("south", attic);
 		rooms[4].setExits("east", foyer);
 		rooms[4].setExits("south", attic);
+		rooms[4].setExits("east", foyer);
+		rooms[4].setExits("south", attic);
+		rooms[6].setExits("east", kitchen);
+		rooms[6].setExits("west", basement);
+
 
 		//starting room, should be be change to foyer once done constructing
 		RoomManager.initialRoom = foyer;
