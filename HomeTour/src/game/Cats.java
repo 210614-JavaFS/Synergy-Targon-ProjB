@@ -65,6 +65,7 @@ public class Cats extends Thread {
 						randomAction = (int)(Math.random()*100);
 					if (randomAction > 80) {
 						catActions = new String(this.name + " is using the litter box.");
+						this.currentRoom.interactWith("litter");
 					}
 					else {
 						catActions = new String(this.name + " is playing with toys.");
