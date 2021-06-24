@@ -1,21 +1,11 @@
 package fixtures.rooms;
 
-import fixtures.objects.Interactive;
 import fixtures.objects.TV;
 
 public class LoungeRoom extends Room {
 	
+	//creates TV object
 	TV tv = new TV();
-	
-	private Interactive loungeFeature = new TV();
-	
-	public Interactive getLoungeFeature() {
-		return loungeFeature;
-	}
-
-	public void setLoungeFeature(Interactive loungeFeature) {
-		this.loungeFeature = loungeFeature;
-	}
 
 
 	public LoungeRoom() {
@@ -35,7 +25,5 @@ public class LoungeRoom extends Room {
 			//this.exits[6] = RoomManager.getRoom(“kitchen”)??;
 			//this.exits[4] = RoomManager.getRoom(“basement”)??;
 	}
-
-}
 
 	
