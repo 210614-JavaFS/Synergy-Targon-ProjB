@@ -33,7 +33,7 @@ public class Room extends Fixture {
 					this.exits[3] = exits;
 					break;
 				default:
-					return null;
+					return;
 			}
 		}
 		
@@ -45,17 +45,13 @@ public class Room extends Fixture {
 			switch (direction) {
 				case "north":
 					return exits[0];
-					break;
-				case "south":
+			case "south":
 					return exits[1];
-					break;
-				case "east":
+			case "east":
 					return exits[2];
-					break;
-				case "west":
+			case "west":
 					return exits[3];
-					break;
-				default:
+			default:
 					return null;
 			}
 		}
