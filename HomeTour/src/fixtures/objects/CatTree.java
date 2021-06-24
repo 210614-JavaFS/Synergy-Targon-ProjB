@@ -12,6 +12,6 @@ public class CatTree extends Fixture implements Interactive {
 	}
 	
 	public void interactWith() {
-			System.out.println("This is cat tree.");
+			System.out.println("You reach inside the cat apartment to see if there is something inside.");
 	}	
 }
