@@ -11,8 +11,8 @@ public class Attic extends Room{
 	public Attic() {
 		super("Attic",
 				"A lonely and open attic",
-				"The dust in the air of the attic takes your breath away" 
-				+ "As you step up the ladder behind you from the foyer, " 
+				"The dust in the air of the attic takes your breath away " 
+				+ "As you step up the ladder behind you from the garage, " 
 				+ "You see a large stacking of cardboard boxes, tinted with age.");
 	 }
 	
