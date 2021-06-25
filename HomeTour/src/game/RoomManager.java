@@ -54,9 +54,8 @@ public class RoomManager {
 		rooms[1].setExits("south", attic);
 		rooms[2].setExits("west", lounge);
 		rooms[2].setExits("south", bathroom);
-		rooms[3].setExits("north", basement);
 		rooms[3].setExits("south", garage);
-		rooms[4].setExits("west", attic);
+		rooms[4].setExits("north", attic);
 		rooms[4].setExits("east", foyer);
 		rooms[5].setExits("west", foyer);
 		rooms[5].setExits("north", kitchen);
