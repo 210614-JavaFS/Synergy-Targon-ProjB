@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import fixtures.rooms.Room;
 import game.RoomManager;
+import fixtures.objects.*;
 
 public class Main{
 	public static final int numberOfRooms = 8;
@@ -180,7 +181,6 @@ public class Main{
 				System.out.println("You can see a door leading to the " + exits.getName() + ". \n"
 								+ exits.getShortDescription() + '\n');
 			}
-	}
 	
 	
 	/*****************************************************
