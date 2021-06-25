@@ -6,7 +6,7 @@ public class CatLitterBox extends Fixture implements Interactive {
 	private boolean litter;
 	
 	public CatLitterBox() {
-		super("litter box",
+		super("litter boxes",
 				"Line up toilets for your small masters.", 
 				"Love thy neighbour as thyself, but even thyself flush toilets right?\n"
 				+ "Why can't the little ones learn to go to toilet and flush them?\n"

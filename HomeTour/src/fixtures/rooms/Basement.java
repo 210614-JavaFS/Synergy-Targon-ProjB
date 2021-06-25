@@ -14,7 +14,7 @@ public class Basement extends Room {
 				"Above earth is your cats' home and under earth is your cats habitat. \n"
 				+ "You walk down the carpeted steps of the stairs and entering the basement. \n"
 				+ "You come into a nicely decorated basement. \n"
-				+ " Climbing path, scratching posts and small hideouts hanging on the wall. \n"
+				+ "Climbing path, scratching posts and small hideouts hanging on the wall. \n"
 				+ "Bashing your face is the smell of cat litter. \n" 
 				+ "You are suffocating from your own laziness.\n"
 				+ "You notice there is a " + catTree.getName() + ". \n"
@@ -26,13 +26,16 @@ public class Basement extends Room {
 	public void interactWith(String whatToInteract) {
 
 		if (whatToInteract.equals("cat tree")) {
+			System.out.println(Basement.catTree.getLongDescription());
 			Basement.catTree.interactWith();
 		}
 		else if (whatToInteract.equals("litter")) {
 			setLitter();
 		}
-		else
+		else if (whatToInteract.equals("litter boxes")){
+			System.out.println(Basement.catLitterBox.getLongDescription());
 			Basement.catLitterBox.interactWith();
+		}
 	}
 	
 	public void setLitter() {
