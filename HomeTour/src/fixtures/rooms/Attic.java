@@ -15,4 +15,12 @@ public class Attic extends Room{
 				+ "As you step up the ladder behind you from the foyer, " 
 				+ "You see a large stacking of cardboard boxes, tinted with age.");
 	 }
+	
+	public void interactWith(String boxInteraction) {
+		System.out.println("Old boxes littered across the ground.");
+		if(boxInteraction.equals("box")) {
+			box.interactWith();
+		}
+	}
+	
 }
