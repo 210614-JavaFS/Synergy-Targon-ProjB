@@ -12,7 +12,7 @@ public class Toilet extends Fixture implements Interactive{
 	}
 	
 	public void interactWith() {
-		System.out.println("You flushed the toilet");
+		System.out.println("You flushed the toilet and now it's clogged!");
 		this.setLongDescription("The uncleansed toilet now has the bowl filled with a strange fluid." 
 		+ "It is now clogged and we don't want to mess with it.");
 	}

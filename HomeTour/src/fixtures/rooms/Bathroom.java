@@ -13,7 +13,7 @@ public class Bathroom extends Room {
 		}
 		
 		public void interactWith(String toiletInteraction) {
-			System.out.println("It is flushing.");
+			System.out.println("The toilet is shaking.");
 			if(toiletInteraction.equals("toilet")) {
 				toilet.interactWith();
 			}
