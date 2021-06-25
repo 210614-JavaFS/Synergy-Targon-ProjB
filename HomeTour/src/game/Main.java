@@ -181,7 +181,7 @@ public class Main{
 				System.out.println("You can see a door leading to the " + exits.getName() + ". \n"
 								+ exits.getShortDescription() + '\n');
 			}
-	
+	}
 	
 	/*****************************************************
 	 * This method parse the input command and turn them
