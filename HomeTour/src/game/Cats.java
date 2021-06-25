@@ -42,14 +42,14 @@ public class Cats extends Thread {
 					randomAction = randomAction % 4;
 						
 					while (randomAction > 0) {
-						for (Room targetRoom: this.currentRoom.exits)
+						for (Room targetRoom: this.currentRoom.getExits())
 							if (targetRoom != null) {
 								if (randomAction > 0) {
 									randomAction--;
 								}
 								else {
 									this.currentRoom = targetRoom;
-									catActions = new String("Your cat " + this.name + "is walking towards " + targetRoom + " .");
+									catActions = new String("Your cat " + this.name + "is walking towards " + targetRoom.getName() + ". ");
 								}							
 							}
 					}
@@ -65,6 +65,7 @@ public class Cats extends Thread {
 						randomAction = (int)(Math.random()*100);
 					if (randomAction > 80) {
 						catActions = new String(this.name + " is using the litter box.");
+						this.currentRoom.interactWith("litter");
 					}
 					else {
 						catActions = new String(this.name + " is playing with toys.");

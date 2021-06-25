@@ -14,9 +14,3 @@ public class Player extends Thread {
 		this.currentRoom = placingRoom;
 	}
 }
-	/*
-	public void start() {
-		Player.gameContinue = true;
-		run();
-	}
-	*/
