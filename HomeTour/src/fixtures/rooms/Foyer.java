@@ -17,7 +17,6 @@ public class Foyer extends Room {
 	}
 	
 	public void interactWith(String whatToInteract) {
-		System.out.println("here here " +whatToInteract);
 		if (whatToInteract.equals("candle")) {
 			candle.interactWith();
 		}
