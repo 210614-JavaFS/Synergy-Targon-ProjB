@@ -17,6 +17,7 @@ public class Attic extends Room{
 	 }
 	
 	public void interactWith(String boxInteraction) {
+		System.out.println("Old boxes littered across the ground.");
 		if(boxInteraction.equals("box")) {
 			box.interactWith();
 		}
