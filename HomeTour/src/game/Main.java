@@ -169,13 +169,17 @@ public class Main{
 	 *****************************************************/
 	private static void printRoom(Player player, ArrayList<Cats> cats) {
 		Room[] allExits = player.currentRoom.getExits();
-		System.out.println("You are in the " + player.currentRoom.getName() + ". \n"
-							+ "You look all around you.");
+
+		System.out.println(player.currentRoom.getLongDescription() + '\n');
+
+		System.out.println("You are now in the " + player.currentRoom.getName() + ". \n"
+							+ "You look all around you. \n");
+		
 		for (Room exits: allExits)
 			if (exits != null) {
-				System.out.println("You can see a door leading to the " + exits.getName() + ".");
+				System.out.println("You can see a door leading to the " + exits.getName() + ". \n"
+								+ exits.getShortDescription() + '\n');
 			}
-		System.out.println("You notice there is a " + "object");
 	}
 	
 	
