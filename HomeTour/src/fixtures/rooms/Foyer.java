@@ -10,12 +10,9 @@ public class Foyer extends Room {
 	public Foyer() {
 		super("Foyer",
 				"A small foyer ",
-				"As you open the rotting door and step inside you enter a small decaying lobby"
-				+ "To your left you see a concrete floor leading to a garage"
-				+ "To your right you see a spacious tile file leading to a bathroom"
-				+ "Straight ahead you can see a small candle"
-				+ "Behind you is the door to the house");
-		
+				"As you open the rotting door and step inside you enter a small decaying lobby\n"
+				+ "The once white walls now a dark grey, with cracks and tears from weathering\n"
+				+ "In front of you stands a small table, with single unlit candle and some matches next to it");
 		candle = new Candle();
 	}
 	
@@ -26,5 +23,4 @@ public class Foyer extends Room {
 		}
 		
 	}
-	
 }
