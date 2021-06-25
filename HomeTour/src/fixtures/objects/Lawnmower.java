@@ -6,7 +6,7 @@ public class Lawnmower extends Fixture implements Interactive{
 	
 	public Lawnmower() {
 		super("Lawnmower",
-				"A rusty lawnmower sitting in the corner",
+				"A rusty lawnmower is indeed sitting in the corner of the garage.",
 				"The lawnmower is old and rusty from years of use. It is sitting in the most cluttered corner of the garage amongst power tools and old oil containers."
 				+ "The lawnmower appears to be off, though the strange vibrations make it seem otherwise."
 				+ "Pulling the cord should start it.");
