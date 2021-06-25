@@ -32,7 +32,8 @@ public class LoungeRoom extends Room {
 	public void interactWith (String tvInteraction) {
 		
 		System.out.println("The " + tvInteraction + " is sleek to the touch.");
-		
+		System.out.println("\n");
+		System.out.println(tv.getLongDescription());
 		if (tvInteraction.equals("tv")) {
 			tv.interactWith();
 		}
