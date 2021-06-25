@@ -3,7 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
-import fixtures.rooms.*;
+import fixtures.rooms.Room;
 import game.RoomManager;
 import fixtures.objects.*;
 
@@ -18,10 +18,10 @@ public class Main{
 	private static HashSet<String> direction = new HashSet<String>();
 	
 	public static void main(String[] args) throws InterruptedException {
-		//Index 0 indicates player
-		//Index >0 indicates cats
-		//This array store all cats and player instances, they share the Player class
-		ArrayList<Player> movingObjects = new ArrayList<Player>();		
+		//This array store all cats
+		ArrayList<Cats> cats = new ArrayList<Cats>();		
+
+		Player player;
 		
 		// initialize the set of slow moving actions
 		lightMoveAction.add("go");
@@ -74,45 +74,46 @@ public class Main{
 
 		//populate the house with player and cats, these are threads
 		//Player constructor takes a name and a Room
-		movingObjects.add(new Player(command[0], RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Johnny", RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Whisker", RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Kitkat", RoomManager.getInitialRoom()));
-		movingObjects.add(new Player("Persian", RoomManager.getInitialRoom()));
+		player = new Player(command[0], RoomManager.getInitialRoom());
+		cats.add(new Cats("Johnny", RoomManager.getInitialRoom()));
+		cats.add(new Cats("Whisker", RoomManager.getInitialRoom()));
+		cats.add(new Cats("Kitkat", RoomManager.getInitialRoom()));
+		cats.add(new Cats("Persian", RoomManager.getInitialRoom()));
 
 		
-		for (int i=0; i<5; i++)
-			movingObjects.get(i).start(); 	//bring the player and cats into the house
+		for (int i=0; i<4; i++)
+			cats.get(i).start(); 	//bring the player and cats into the house
 
 		//player action start
 		while (playerInHouse) { //player not leaving yet
 
 			//print player surrounding description
-			printRoom(movingObjects);
+			printRoom(player, cats);
 
+			//print action result for cats
+			for (Cats catsIterator: cats) {
+				if (catsIterator.getCatActions() != null)
+					if (player.currentRoom.getName().equals(catsIterator.currentRoom.getName()))
+						System.out.println(catsIterator.getCatActions());
+			}
+			
 			//prompt for input and collect
 			System.out.println("What do you want to do next: ");			
 			command = collectInput(userInput);
 
 			//execute input command as player taking action
-			playerInHouse = parse(command, movingObjects);
-/*
-			for (Player movingObjectsIterator: movingObjects) {
-				//action result for player and cats
-				
-				
-			}
-*/
+			playerInHouse = parse(command, player, cats);
+
 		}
 
-		for (Player movingObjectsIterator: movingObjects)
-			movingObjectsIterator.terminating();
+		for (Cats catsIterator: cats)
+			catsIterator.terminating();
 
 		// kill all threads
-		for (Player movingObjectsIterator: movingObjects)
-			if (movingObjectsIterator.isAlive()) {
+		for (Cats catsIterator: cats)
+			if (catsIterator.isAlive()) {
 				try {
-					movingObjectsIterator.join();				
+					catsIterator.join();				
 				}
 				catch (InterruptedException intEcept) {
 					break;
@@ -162,59 +163,60 @@ public class Main{
 		return editInput;
 	}
 	
+	
 	/*****************************************************
      * This method print the surrounding for the player
 	 * 
 	 *****************************************************/
-	private static void printRoom(ArrayList<Player> movingObjects) {
-		Room[] allExits = movingObjects.get(0).currentRoom.getExits();
-		System.out.println("You are in the " + movingObjects.get(0).currentRoom.getName() + ". \n"
-							+ "You look all around you.");
+	private static void printRoom(Player player, ArrayList<Cats> cats) {
+		Room[] allExits = player.currentRoom.getExits();
+
+		System.out.println(player.currentRoom.getLongDescription() + '\n');
+
+		System.out.println("You are now in the " + player.currentRoom.getName() + ". \n"
+							+ "You look all around you. \n");
+		
 		for (Room exits: allExits)
 			if (exits != null) {
-				System.out.println("You can see a door leading to the " + exits.getName() + ".");
+				System.out.println("You can see a door leading to the " + exits.getName() + ". \n"
+								+ exits.getShortDescription() + '\n');
 			}
-		
-		//need to be able to print the name of the object of the current room
-		System.out.println("You notice there is a " +allExits[2] + "object");
-		
-		
-	}
+	
 	
 	/*****************************************************
 	 * This method parse the input command and turn them
 	 * into actions
 	 * 
 	 *****************************************************/	
-	public static boolean parse(String[] command, ArrayList<Player> movingObjects) {
+	public static boolean parse(String[] command, Player player,  ArrayList<Cats> cats) {
 		if (lightMoveAction.contains(command[0])) {
 			if (direction.contains(command[1])) {
-				if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
+				if (player.currentRoom.getExits(command[1]) == null)	{
 					System.out.println("You " + command[0] + " into the wall.");
 				}
 				else {
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
+					System.out.println("You " + command[0] + " towards " + player.currentRoom.getExits(command[1]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
+					if (player.currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
-						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+						player.currentRoom = player.currentRoom.getExits(command[1]);
 						}
 					}
 			}	
 			else if (direction.contains(command[2])) {
-				if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
+				if (player.currentRoom.getExits(command[2]) == null)	{
 					System.out.println("You " + command[0] + "into the wall.");
 				}
 				else {
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
+					System.out.println("You " + command[0] + " towards " + player.currentRoom.getExits(command[2]).getName() + ".");
 
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
+					if (player.currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
-						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+						player.currentRoom = player.currentRoom.getExits(command[1]);
 					}
 				}
 			}
@@ -224,30 +226,30 @@ public class Main{
 		}
 		else if (fastMoveAction.contains(command[0])) {
 			if (direction.contains(command[1])) {
-				if (movingObjects.get(0).currentRoom.getExits(command[1]) == null)	{
+				if (player.currentRoom.getExits(command[1]) == null)	{
 					System.out.println("You " + command[0] + "into the wall.");
 				}
 				else {
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[1]).getName() + ".");
+					System.out.println("You " + command[0] + " towards " + player.currentRoom.getExits(command[1]).getName() + ".");
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
+					if (player.currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
-						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+						player.currentRoom = player.currentRoom.getExits(command[1]);
 					}
 				}
 			}
 			else if (direction.contains(command[2])) {
-				if (movingObjects.get(0).currentRoom.getExits(command[2]) == null)	{
+				if (player.currentRoom.getExits(command[2]) == null)	{
 					System.out.println("You " + command[0] + "into the wall.");
 				}
 				else { 
-					System.out.println("You " + command[0] + " towards " + movingObjects.get(0).currentRoom.getExits(command[2]).getName() + ".");
+					System.out.println("You " + command[0] + " towards " + player.currentRoom.getExits(command[2]).getName() + ".");
 					//leaving house
-					if (movingObjects.get(0).currentRoom.getExits(command[1]).getName().equals("outside")) return false;
+					if (player.currentRoom.getExits(command[1]).getName().equals("outside")) return false;
 					else {
 						//moving to another room
-						movingObjects.get(0).currentRoom = movingObjects.get(0).currentRoom.getExits(command[1]);
+						player.currentRoom = player.currentRoom.getExits(command[1]);
 					}
 				}
 			}
@@ -265,8 +267,9 @@ public class Main{
 			command[1] = command[1].substring(0, commandIndex+1);
 			
 			System.out.println("You " + command[0] + " the " + command[1]);
-			movingObjects.get(0).currentRoom.interactWith(command[1]);
+			player.currentRoom.interactWith(command[1]);
 // find a way to put room.interact in there : )
+
 		}
 //		else if (heavyInteractAction.contains(command[0])) {
 // not implemented			

@@ -6,14 +6,18 @@ public class Lawnmower extends Fixture implements Interactive{
 	
 	public Lawnmower() {
 		super("Lawnmower",
-				"A rusty lawnmower sitting in the corner",
+				"A rusty lawnmower is indeed sitting in the corner of the garage.",
 				"The lawnmower is old and rusty from years of use. It is sitting in the most cluttered corner of the garage amongst power tools and old oil containers."
-				+ "It is off at the moment");
+				+ "The lawnmower appears to be off, though the strange vibrations make it seem otherwise."
+				+ "Pulling the cord should start it.");
+			
+		
+		
 	}
 	
 	public void interactWith() {
-		System.out.println("Pulling the cord will power the lawnmower on.");
-		this.setLongDescription("The lawnmower is on, the blade spins from beneath, the overgrown grass outside is ready to be cut.");
+		System.out.println("You started the old lawnmower. The blade beneath spins!");
+		this.setLongDescription("The lawnmower is on, the scraggly overgrown grass outside is ready to be cut.");
 	}
 
 }

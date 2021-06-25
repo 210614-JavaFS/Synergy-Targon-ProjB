@@ -4,7 +4,7 @@ public class Outside extends Room {
 
 	public Outside() {
 		super("outside",
-				"exit the house through the front gate",
+				"\"Once I was brave enough to leave home\"",
 				"this door way has the magic to pop you out of the house.");
 	}
 }
