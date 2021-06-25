@@ -4,8 +4,8 @@ import fixtures.objects.TV;
 
 public class LoungeRoom extends Room {
 	
-	//creates TV object
-	TV tv = new TV();
+	//creates TV obje
+	private static TV tv = new TV();
 
 
 	public LoungeRoom() {
@@ -15,23 +15,26 @@ public class LoungeRoom extends Room {
 			    + "\n"
 		   +"Overhead you can see an empty emerald chandelier swaying rhythmically."
 		   +"\n"
-		   + "Running your hands across the rough paint job on the walls, you spot a TV in the far back "
+		   + "Running your hands across the rough paint job on the walls, you spot a " + tv.getName() + "in the far back "
 		   + "next to a kitchen to the east. "
 		   +"\n"
+		   + tv.getShortDescription() + "\n"
 		   + "Opposite to the kitchen you spot stairs going down to the basement."    
 		   +"\n"
 			+ "You let out a sigh as you crouch down next to the translucent window being showered with snowdrops.");
 		
-		tv = new TV();
 		
 	}
 	
 	public void interactWith (String tvInteraction) {
 		
-		System.out.println("A mysterious looking " + tvInteraction);
+		System.out.println("A very fancy looking " + tvInteraction);
 		
 		if (tvInteraction.equals("tv")) {
-			tv.interactWith();
+			System.out.println(LoungeRoom.tv.getLongDescription());
+			LoungeRoom.tv.interactWith();
 		}
 	}
+	
+
 }
