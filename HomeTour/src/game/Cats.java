@@ -44,7 +44,7 @@ public class Cats extends Thread {
 						if ((targetRoom != null) && !(targetRoom.getName().equals(pastRoom))) {
 							this.pastRoom = new String(currentRoom.getName());
 							this.currentRoom = targetRoom;							
-							catActions = new String("Your cat " + this.name + "is walking towards " + targetRoom.getName() + ". ");
+							catActions = new String("Your cat " + this.name + " is walking towards " + targetRoom.getName() + ". ");
 						}							
 					}
 					break;
