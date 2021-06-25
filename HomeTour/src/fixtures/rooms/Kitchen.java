@@ -7,6 +7,8 @@ public class Kitchen extends Room {
 	//added my object to my room
 	Microwave mic = new Microwave();
 	
+	
+	//Creates the kitchen
 	public Kitchen() {
 		super("Kitchen",
 				"an immaculate, all-white kitchen",
@@ -18,6 +20,7 @@ public class Kitchen extends Room {
 		
 	}
 	
+	//Allows player to interact with microwave
 	public void interactWith(String micInteraction) {
 		System.out.println("It looks as though it'll work.");
 		if(micInteraction.equals("microwave")) {
