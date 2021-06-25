@@ -49,7 +49,6 @@ public class Cats extends Thread {
 								}
 								else {
 									this.currentRoom = targetRoom;
-									catActions = new String("Your cat " + this.name + "is walking towards " + targetRoom.getName() + ". ");
 									System.out.println(catActions);
 								}							
 							}
