@@ -14,7 +14,7 @@ public class TV extends Fixture implements Interactive {
 				+"The TV is turned on despite the crack and is emitting static noise");
 	}
 	
-	
+	//nothing
 	public void interactWith() {
 		System.out.println("You hit the TV with a heavy tap turning it off. \n"
 	+ "The TV is warm to the touch. May need some repairs as it"

@@ -4,7 +4,7 @@ import fixtures.objects.TV;
 
 public class LoungeRoom extends Room {
 	
-	//creates TV object
+	//creates TV obje
 	private static TV tv = new TV();
 
 
